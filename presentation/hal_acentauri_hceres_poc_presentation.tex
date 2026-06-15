@@ -1,0 +1,129 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\definecolor{inriablue}{RGB}{22,65,148}
+\setbeamercolor{structure}{fg=inriablue}
+\setbeamercolor{title}{fg=white,bg=inriablue}
+\setbeamercolor{frametitle}{fg=inriablue}
+
+\begin{document}
+
+\begin{frame}{1. HAL ACENTAURI HCERES POC}
+  \large
+  Automating a first reproducible bibliometric analysis to support HCERES-style evaluation preparation.
+
+  \vspace{0.8em}
+  \begin{block}{Problem}
+    Preparing an HCERES-style evaluation requires a reliable synthesis of scientific output, collaborations, publication venues, and open science indicators.
+  \end{block}
+
+  \begin{itemize}
+    \item Most of the data already exists in HAL, but metadata is heterogeneous.
+    \item Manual extraction is slow, hard to reproduce, and difficult to audit.
+    \item The objective is not a final institutional report, but a verifiable working basis.
+  \end{itemize}
+
+  \vfill
+  \scriptsize INRIA / ACENTAURI -- Summary presentation -- \today
+\end{frame}
+
+\begin{frame}{2. Goal of the POC}
+  \begin{block}{Objective}
+    Build a local, deterministic, and rerunnable pipeline to produce a first bibliometric analysis of the ACENTAURI team from HAL.
+  \end{block}
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \textbf{Inputs}
+      \begin{itemize}
+        \item HAL query or structure identifier;
+        \item analysis period;
+        \item optional CSV files: members, themes, Scimago, CORE.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Outputs}
+      \begin{itemize}
+        \item CSV and LaTeX tables;
+        \item figures;
+        \item Markdown report;
+        \item standalone LaTeX report.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{3. Framing Prompt Given to the AI}
+  \small
+  \begin{block}{Prompt reconstructed from the repository}
+    \emph{Create a simple, monolithic Python proof of concept to automate a HAL-based bibliometric analysis of the ACENTAURI team in a format useful for HCERES preparation.}
+  \end{block}
+
+  \begin{itemize}
+    \item Query HAL automatically, with structure discovery or explicit override.
+    \item Clean, filter, and deduplicate publications.
+    \item Compute indicators: output, authors, document types, collaborations, venues, open science.
+    \item Accept optional CSV files as enrichments, without making them blocking dependencies.
+    \item Generate deterministic reports, with no paid LLM API and no invented content.
+  \end{itemize}
+
+  \vspace{0.4em}
+  \scriptsize
+  Note: the exact prompt is not versioned in the repository; this slide summarizes the implicit specification reflected by the generated code.
+\end{frame}
+
+\begin{frame}{4. Generated Pipeline}
+  \begin{enumerate}
+    \item Discover the HAL query or use an explicit structure identifier.
+    \item Retrieve HAL records through paginated API calls.
+    \item Normalize metadata: title, authors, dates, types, affiliations, DOI, files.
+    \item Filter out non-target records: theses, HDR, reports, lectures, undefined categories.
+    \item Deduplicate records and identify ACENTAURI members.
+    \item Compute indicators and export deliverables.
+  \end{enumerate}
+
+  \begin{block}{Design principle}
+    The script distinguishes verified HAL metadata, inferred information, manually supplied data, and unavailable information.
+  \end{block}
+\end{frame}
+
+\begin{frame}{5. Results, Limitations, and Next Steps}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.50\textwidth}
+      \textbf{Existing run results}
+      \begin{itemize}
+        \item 69 HAL records retrieved;
+        \item 58 publications retained;
+        \item 31 members identified or inferred;
+        \item Markdown, LaTeX, and PDF reports generated.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \textbf{To consolidate}
+      \begin{itemize}
+        \item validate the member list;
+        \item provide the ARC/RIC/MOC mapping;
+        \item add Scimago and CORE data;
+        \item review partner classifications.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \begin{block}{Next step}
+    Move from POC to reliable deliverable by versioning validation CSV files and adding domain-level quality control before institutional use.
+  \end{block}
+\end{frame}
+
+\end{document}

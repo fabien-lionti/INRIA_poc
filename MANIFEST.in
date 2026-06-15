@@ -1,0 +1,5 @@
+include README.md
+include requirements.txt
+recursive-include data *.example.csv
+recursive-exclude outputs *
+recursive-exclude __pycache__ *
