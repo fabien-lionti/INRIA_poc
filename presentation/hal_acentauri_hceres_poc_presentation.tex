@@ -1,128 +1,1241 @@
-\documentclass[10pt,aspectratio=169]{beamer}
+% % \documentclass[10pt,aspectratio=169]{beamer}
 
-\usetheme{Madrid}
-\usecolortheme{default}
+% % \usepackage[T1]{fontenc}
+% % \usepackage[utf8]{inputenc}
+% % \usepackage[english]{babel}
+% % \usepackage{lmodern}
+% % \usepackage{booktabs}
+% % \usepackage{xcolor}
+% % \usepackage{array}
+% % \usepackage{graphicx}
+
+% % \setbeamertemplate{navigation symbols}{}
+% % \setbeamertemplate{headline}{}
+% % \setbeamertemplate{footline}{}
+% % \setbeamertemplate{frametitle}{}
+
+% % \usebackgroundtemplate{%
+% %   \includegraphics[width=\paperwidth,height=\paperheight]{ACENTAURI_template_no_text_one_page.pdf}%
+% % }
+
+% % \begin{document}
+
+% % \begin{frame}{1. HAL ACENTAURI HCERES POC}
+% %   \large
+% %   Automating a first reproducible bibliometric analysis to support HCERES-style evaluation preparation.
+
+% %   \vspace{0.8em}
+% %   \begin{block}{20-minute presentation outline}
+% %     Problem addressed, proposed idea, use of AI agents, implementation, results, demonstration, and self-assessment.
+% %   \end{block}
+
+% %   \begin{itemize}
+% %     \item Context: ACENTAURI scientific production in HAL.
+% %     \item Goal: produce a verifiable working basis for HCERES preparation.
+% %     \item Constraint: deterministic and auditable generated outputs.
+% %   \end{itemize}
+
+% %   \vfill
+% %   \scriptsize INRIA / ACENTAURI -- Summary presentation -- \today
+% % \end{frame}
+
+% % \begin{frame}{2. Problem Addressed}
+% %   \begin{block}{Evaluation preparation bottleneck}
+% %     Preparing an HCERES-style evaluation requires a reliable synthesis of scientific output, collaborations, publication venues, and open science indicators.
+% %   \end{block}
+
+% %   \begin{itemize}
+% %     \item The source data exists mostly in HAL, but metadata is heterogeneous and sometimes incomplete.
+% %     \item Manual extraction is slow, repetitive, hard to audit, and easy to make inconsistent.
+% %     \item The team needs a first report that separates verified metadata, inferred data, manual enrichment, and missing information.
+% %     \item The objective is not to replace expert validation, but to accelerate and structure it.
+% %   \end{itemize}
+% % \end{frame}
+
+% % \begin{frame}{3. Proposed Idea}
+% %   \begin{block}{Core idea}
+% %     Build a local, deterministic, and rerunnable pipeline that transforms HAL metadata into HCERES-oriented indicators and report artifacts.
+% %   \end{block}
+
+% %   \begin{columns}[T,onlytextwidth]
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Inputs}
+% %       \begin{itemize}
+% %         \item HAL query or structure identifier;
+% %         \item analysis period;
+% %         \item optional CSV files: members, themes, Scimago, CORE.
+% %       \end{itemize}
+% %     \end{column}
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Outputs}
+% %       \begin{itemize}
+% %         \item CSV and LaTeX tables;
+% %         \item figures;
+% %         \item Markdown report;
+% %         \item standalone LaTeX report.
+% %       \end{itemize}
+% %     \end{column}
+% %   \end{columns}
+% % \end{frame}
+
+% % \begin{frame}{4. How AI Agents Were Used}
+% %   \begin{columns}[T,onlytextwidth]
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{AI tools used}
+% %       \begin{itemize}
+% %         \item ChatGPT: clarification, design discussion, text drafting.
+% %         \item Codex: code generation, repository edits, debugging, tests, documentation.
+% %         \item Paid AI APIs were used during development and material preparation.
+% %       \end{itemize}
+% %     \end{column}
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Tasks supported by AI}
+% %       \begin{itemize}
+% %         \item Translate the need into a technical specification.
+% %         \item Generate the first Python implementation.
+% %         \item Improve robustness, CLI behavior, tests, and documentation.
+% %         \item Draft report and presentation material.
+% %       \end{itemize}
+% %     \end{column}
+% %   \end{columns}
+
+% %   \begin{block}{Human role}
+% %     Define the institutional need, check assumptions, validate outputs, and decide what can be trusted for HCERES use.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{5. Framing Prompt Given to the AI}
+% %   \small
+% %   \begin{block}{Prompt reconstructed from the repository}
+% %     \emph{Create a simple, monolithic Python proof of concept to automate a HAL-based bibliometric analysis of the ACENTAURI team in a format useful for HCERES preparation.}
+% %   \end{block}
+
+% %   \begin{itemize}
+% %     \item Query HAL automatically, with structure discovery or explicit override.
+% %     \item Clean, filter, and deduplicate publications.
+% %     \item Compute indicators: output, authors, document types, collaborations, venues, open science.
+% %     \item Accept optional CSV files as enrichments, without making them blocking dependencies.
+% %     \item Generate deterministic reports, with explicit provenance and no invented content.
+% %   \end{itemize}
+
+% %   \vspace{0.4em}
+% %   \scriptsize
+% %   Note: the exact prompt is not versioned in the repository; this slide summarizes the implicit specification reflected by the generated code.
+% % \end{frame}
+
+% % \begin{frame}{6. Implementation}
+% %   \begin{enumerate}
+% %     \item Discover the HAL query or use an explicit structure identifier.
+% %     \item Retrieve HAL records through paginated API calls.
+% %     \item Normalize metadata: title, authors, dates, types, affiliations, DOI, files.
+% %     \item Filter out non-target records: theses, HDR, reports, lectures, undefined categories.
+% %     \item Deduplicate records and identify ACENTAURI members.
+% %     \item Compute indicators and export deliverables.
+% %   \end{enumerate}
+
+% %   \begin{block}{Design principle}
+% %     The script distinguishes verified HAL metadata, inferred information, manually supplied data, and unavailable information.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{7. Generated Artifacts}
+% %   \begin{columns}[T,onlytextwidth]
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Repository deliverables}
+% %       \begin{itemize}
+% %         \item Single Python module: \texttt{hal\_acentauri\_hceres\_poc.py}.
+% %         \item CLI options for period, team, output directory, and optional CSV files.
+% %         \item Static smoke tests.
+% %         \item README and example CSV files.
+% %       \end{itemize}
+% %     \end{column}
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Generated outputs}
+% %       \begin{itemize}
+% %         \item CSV tables and LaTeX tables.
+% %         \item Figures and collaboration network exports.
+% %         \item Markdown summary report.
+% %         \item Standalone LaTeX report.
+% %       \end{itemize}
+% %     \end{column}
+% %   \end{columns}
+
+% %   \begin{block}{Reproducibility}
+% %     The pipeline can be rerun locally; outputs may change only when HAL metadata or optional validation CSV files change.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{8. Inside the Deterministic Report}
+% %   \small
+% %   \begin{block}{Example content generated in \texttt{outputs/reports/}}
+% %     The deterministic report is not free-form text invented by an LLM: it is assembled from computed indicators and explicit metadata provenance.
+% %   \end{block}
+
+% %   \begin{columns}[T,onlytextwidth]
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Scope and production}
+% %       \begin{itemize}
+% %         \item Team: ACENTAURI.
+% %         \item Period: 2022--2026.
+% %         \item HAL query: \texttt{structId\_i:1069625}.
+% %         \item Raw HAL records: 69.
+% %         \item Publications retained: 58.
+% %       \end{itemize}
+% %     \end{column}
+% %     \begin{column}{0.48\textwidth}
+% %       \textbf{Audit-oriented sections}
+% %       \begin{itemize}
+% %         \item Top authors and venues.
+% %         \item Collaboration patterns.
+% %         \item Open science indicators.
+% %         \item Missing optional data.
+% %         \item Validation needs and limitations.
+% %       \end{itemize}
+% %     \end{column}
+% %   \end{columns}
+
+% %   \begin{block}{Example limitation written in the report}
+% %     Theme attribution is reliable only for authors present in the theme mapping CSV or otherwise discoverable from metadata.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{9. Results Obtained}
+% %   \begin{columns}[T,onlytextwidth]
+% %     \begin{column}{0.50\textwidth}
+% %       \textbf{Existing run results}
+% %       \begin{itemize}
+% %         \item 69 HAL records retrieved;
+% %         \item 58 publications retained;
+% %         \item 31 members identified or inferred;
+% %         \item Markdown, LaTeX, and PDF reports generated.
+% %       \end{itemize}
+% %     \end{column}
+% %     \begin{column}{0.46\textwidth}
+% %       \textbf{Open science indicators}
+% %       \begin{itemize}
+% %         \item 56 publications with full text in HAL;
+% %         \item 2 publications without full text in HAL;
+% %         \item 24 publications with DOI;
+% %         \item 55 English publications and 3 French publications.
+% %       \end{itemize}
+% %     \end{column}
+% %   \end{columns}
+
+% %   \begin{block}{Interpretation}
+% %     These numbers provide a first audit basis, not a final institutional validation.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{10. Demonstration}
+% %   \begin{block}{Demo path}
+% %     Run the pipeline, inspect generated outputs, and show where manual validation enters the workflow.
+% %   \end{block}
+
+% %   \begin{enumerate}
+% %     \item Run: \texttt{python hal\_acentauri\_hceres\_poc.py --output-dir outputs}
+% %     \item Inspect: \texttt{outputs/reports/hceres\_summary\_report.md}
+% %     \item Open generated LaTeX tables and figures.
+% %     \item Explain optional enrichment files:
+% %       \texttt{acentauri\_members.csv}, \texttt{theme\_mapping.csv},
+% %       \texttt{scimago\_journals.csv}, \texttt{core\_conferences.csv}.
+% %   \end{enumerate}
+
+% %   \begin{block}{Message for the demo}
+% %     The useful part is not only the final report, but the auditable path from HAL metadata to each indicator.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{11. Narrated Video Synchronization}
+% %   \begin{block}{Goal}
+% %     Make the narrated video easier to follow by aligning each slide duration with its spoken explanation.
+% %   \end{block}
+
+% %   \begin{enumerate}
+% %     \item Each slide has a dedicated narration paragraph.
+% %     \item The TTS voice is slowed down to improve comprehension.
+% %     \item Each slide clip duration is computed from the generated audio.
+% %     \item Long TTS silences are compressed to avoid empty waiting time.
+% %     \item A title card is inserted before the slide sequence.
+% %   \end{enumerate}
+
+% %   \begin{block}{AI support}
+% %     Codex created the script, adjusted the voice speed, compressed silences, and regenerated the final MP4.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{12. Limitations and Next Steps}
+% %   \begin{columns}[T,onlytextwidth]
+% %     \begin{column}{0.50\textwidth}
+% %       \textbf{Current limitations}
+% %       \begin{itemize}
+% %         \item HAL metadata can be incomplete or heterogeneous.
+% %         \item Member identification is partly inferred without a validated CSV.
+% %         \item Theme attribution needs ARC/RIC/MOC mapping.
+% %         \item Partner classification is heuristic.
+% %       \end{itemize}
+% %     \end{column}
+% %     \begin{column}{0.46\textwidth}
+% %       \textbf{Next steps}
+% %       \begin{itemize}
+% %         \item Validate the member list.
+% %         \item Provide theme mapping.
+% %         \item Add Scimago and CORE reference data.
+% %         \item Add domain-level quality control before institutional use.
+% %       \end{itemize}
+% %     \end{column}
+% %   \end{columns}
+% % \end{frame}
+
+% % \begin{frame}{13. Self-Assessment: AI Time Saved}
+% %   \small
+% %   \begin{tabular}{>{\bfseries}p{0.34\textwidth}p{0.56\textwidth}}
+% %     AI tools used & ChatGPT, Codex. \\
+% %     Tasks supported by AI & Idea structuring, implementation, debugging, tests, documentation, report generation, slide drafting, video generation. \\
+% %     Estimated time without AI & More than one week, estimated at $>$40 hours. \\
+% %     Estimated time with AI & About 3 hours. \\
+% %     Estimated time saved & $>$37 hours, i.e. several working days. \\
+% %   \end{tabular}
+
+% %   \vspace{0.8em}
+% %   \begin{block}{Comments}
+% %     AI worked well for producing a first end-to-end implementation, improving error handling, generating documentation and slides, and automating the narrated video. It still required human validation for institutional meaning, HAL interpretation, member lists, theme mapping, and final quality control.
+% %   \end{block}
+% % \end{frame}
+
+% % \begin{frame}{14. Conclusion}
+% %   \begin{block}{Main contribution}
+% %     A reproducible POC that turns HAL metadata into a first HCERES-oriented analysis package: tables, figures, report files, and explicit validation gaps.
+% %   \end{block}
+
+% %   \begin{itemize}
+% %     \item The project demonstrates how AI agents can accelerate practical research administration tooling.
+% %     \item The generated pipeline remains deterministic and auditable.
+% %     \item The next value comes from validated local data, not more automation alone.
+% %   \end{itemize}
+
+% %   \vfill
+% %   \scriptsize Suggested timing: about 1.5--2 minutes per content slide, with a short live or file-based demo.
+% % \end{frame}
+
+% % \begin{frame}{15. How This Video Was Generated}
+% %   \begin{block}{Generation workflow}
+% %     The final MP4 was generated automatically from the Beamer PDF and the narration script.
+% %   \end{block}
+
+% %   \begin{enumerate}
+% %     \item Compile the Beamer source to PDF with \texttt{pdflatex}.
+% %     \item Render each PDF page as a PNG image with \texttt{pdftoppm}.
+% %     \item Generate one audio narration per slide with \texttt{edge-tts}.
+% %     \item Compress long TTS silences with \texttt{ffmpeg}.
+% %     \item Create one still-image video clip per slide.
+% %     \item Match each clip duration to its narration and concatenate all clips.
+% %   \end{enumerate}
+
+% %   \begin{block}{Result}
+% %     The final video contains a title card, narrated slides, slower speech, and no detected silences longer than one second.
+% %   \end{block}
+% % \end{frame}
+
+% % \end{document}
+
+% \documentclass[10pt,aspectratio=169]{beamer}
+
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}
+% \usepackage{lmodern}
+% \usepackage{booktabs}
+% \usepackage{xcolor}
+% \usepackage{array}
+% \usepackage{graphicx}
+% \usepackage{ragged2e}
+% \usepackage{tikz}
+
+% \setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{headline}{}
+% \setbeamertemplate{footline}{}
+% \setbeamertemplate{frametitle}{}
+% \setbeamersize{text margin left=1.05cm,text margin right=1.05cm}
+
+% \definecolor{inriablue}{RGB}{22,65,148}
+% \definecolor{darkgraytext}{RGB}{45,45,45}
+
+% \setbeamercolor{normal text}{fg=darkgraytext}
+% \setbeamercolor{structure}{fg=inriablue}
+% \setbeamercolor{block title}{fg=white,bg=inriablue}
+% \setbeamercolor{block body}{fg=darkgraytext,bg=black!3}
+% \setbeamerfont{block title}{series=\bfseries}
+
+% \usebackgroundtemplate{%
+%   \includegraphics[width=\paperwidth,height=\paperheight]{ACENTAURI_template_no_text_one_page.pdf}%
+% }
+
+% % Absolute top title used on every slide.
+% % The title is anchored to the physical top-left of the slide, independently of Beamer's layout.
+% \newcommand{\SlideTitle}[1]{%
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \node[
+%       anchor=north west,
+%       align=left,
+%       text width=14.6cm,
+%       inner sep=0pt
+%     ] at ([xshift=1.05cm,yshift=-0.16cm]current page.north west) {%
+%       {\Large\bfseries\color{inriablue}#1}%
+%     };
+%   \end{tikzpicture}%
+%   \vspace*{1.05cm}%
+% }
+
+% \begin{document}
+
+% \begin{frame}
+%   \SlideTitle{1. HAL ACENTAURI HCERES POC}
+
+%   \large
+%   A reproducible bibliometric pipeline to support HCERES-style evaluation preparation.
+
+%   \vspace{0.8em}
+%   \begin{block}{Presentation roadmap}
+%     Problem, proposed solution, AI-agent workflow, implementation, outputs, results, demo path, and time-saving assessment.
+%   \end{block}
+
+%   \begin{itemize}
+%     \item Context: ACENTAURI scientific production indexed in HAL.
+%     \item Goal: build a verifiable working basis for evaluation preparation.
+%     \item Constraint: generate deterministic, auditable, and rerunnable outputs.
+%   \end{itemize}
+
+%   \vfill
+%   \scriptsize Inria / ACENTAURI -- Summary presentation -- \today
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{2. Problem Addressed}
+
+%   \begin{block}{Evaluation preparation is data-heavy}
+%     HCERES-style evaluation requires a reliable synthesis of publications, collaborations, venues, and open-science indicators.
+%   \end{block}
+
+%   \begin{itemize}
+%     \item Most source data is available in HAL, but the metadata is heterogeneous and sometimes incomplete.
+%     \item Manual extraction is slow, repetitive, difficult to audit, and prone to inconsistencies.
+%     \item The team needs a first report that separates verified metadata, inferred data, manual enrichment, and missing information.
+%     \item The objective is to accelerate expert validation, not to replace it.
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{3. Proposed Solution}
+
+%   \begin{block}{Core idea}
+%     Build a local, deterministic, and rerunnable pipeline that transforms HAL metadata into HCERES-oriented indicators and report artifacts.
+%   \end{block}
+
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Inputs}
+%       \begin{itemize}
+%         \item HAL query or structure identifier;
+%         \item analysis period;
+%         \item optional CSV files for members, themes, Scimago, and CORE.
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Outputs}
+%       \begin{itemize}
+%         \item CSV and LaTeX tables;
+%         \item figures and network exports;
+%         \item Markdown summary report;
+%         \item standalone LaTeX report.
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{4. Role of AI Agents}
+
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Tools used}
+%       \begin{itemize}
+%         \item ChatGPT: clarification, design discussion, and text drafting.
+%         \item Codex: code generation, repository edits, debugging, tests, and documentation.
+%         \item Paid AI APIs: development and material preparation support.
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Tasks supported}
+%       \begin{itemize}
+%         \item Turn the need into a technical specification.
+%         \item Generate the first Python implementation.
+%         \item Improve robustness, CLI behavior, tests, and documentation.
+%         \item Draft the report, slides, and video script.
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+
+%   \begin{block}{Human responsibility}
+%     Define the institutional need, check assumptions, validate outputs, and decide what is reliable enough for evaluation use.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{5. Initial Prompt to the AI}
+
+%   \small
+%   \begin{block}{Reconstructed specification}
+%     \emph{Create a simple, monolithic Python proof of concept that automates a HAL-based bibliometric analysis of the ACENTAURI team for HCERES-style evaluation preparation.}
+%   \end{block}
+
+%   \begin{itemize}
+%     \item Query HAL automatically, with structure discovery or explicit override.
+%     \item Clean, filter, and deduplicate publication records.
+%     \item Compute indicators on output, authors, document types, collaborations, venues, and open science.
+%     \item Use optional CSV files as enrichments without making them mandatory.
+%     \item Generate deterministic reports with explicit provenance and no invented content.
+%   \end{itemize}
+
+%   \vspace{0.4em}
+%   \scriptsize
+%   The exact prompt was not versioned; this slide summarizes the specification reflected by the generated code.
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{6. Implementation Pipeline}
+
+%   \begin{enumerate}
+%     \item Discover the HAL query or use an explicit structure identifier.
+%     \item Retrieve HAL records through paginated API calls.
+%     \item Normalize metadata: title, authors, dates, types, affiliations, DOI, and files.
+%     \item Remove non-target records: theses, HDR, reports, lectures, and undefined categories.
+%     \item Deduplicate records and identify ACENTAURI members.
+%     \item Compute indicators and export all deliverables.
+%   \end{enumerate}
+
+%   \begin{block}{Design principle}
+%     Every output distinguishes verified HAL metadata, inferred information, manually supplied data, and unavailable information.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{7. Generated Artifacts}
+
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Repository deliverables}
+%       \begin{itemize}
+%         \item Single Python module: \texttt{hal\_acentauri\_hceres\_poc.py}.
+%         \item CLI options for period, team, output directory, and optional CSV files.
+%         \item Static smoke tests.
+%         \item README and example CSV files.
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Generated outputs}
+%       \begin{itemize}
+%         \item CSV and LaTeX tables.
+%         \item Figures and collaboration network exports.
+%         \item Markdown summary report.
+%         \item Standalone LaTeX report.
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+
+%   \begin{block}{Reproducibility}
+%     The pipeline can be rerun locally. Outputs change only when HAL metadata or optional validation files change.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{8. Deterministic Report Structure}
+
+%   \small
+%   \begin{block}{Report generated from computed data}
+%     The report is not free-form LLM text. It is assembled from computed indicators and explicit metadata provenance.
+%   \end{block}
+
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Scope and production}
+%       \begin{itemize}
+%         \item Team: ACENTAURI.
+%         \item Period: 2022--2026.
+%         \item HAL query: \texttt{structId\_i:1069625}.
+%         \item Raw HAL records: 69.
+%         \item Publications retained: 58.
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.48\textwidth}
+%       \textbf{Audit-oriented sections}
+%       \begin{itemize}
+%         \item Top authors and venues.
+%         \item Collaboration patterns.
+%         \item Open-science indicators.
+%         \item Missing optional data.
+%         \item Validation needs and limitations.
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+
+%   \begin{block}{Example limitation}
+%     Theme attribution is reliable only for authors present in the theme-mapping CSV or otherwise discoverable from metadata.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{9. First Results}
+
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.50\textwidth}
+%       \textbf{Existing run}
+%       \begin{itemize}
+%         \item 69 HAL records retrieved.
+%         \item 58 publications retained.
+%         \item 31 members identified or inferred.
+%         \item Markdown, LaTeX, and PDF reports generated.
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.46\textwidth}
+%       \textbf{Open-science indicators}
+%       \begin{itemize}
+%         \item 56 publications with full text in HAL.
+%         \item 2 publications without full text in HAL.
+%         \item 24 publications with DOI.
+%         \item 55 English publications and 3 French publications.
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+
+%   \begin{block}{Interpretation}
+%     These numbers are a first audit basis. They still require institutional validation before being used as final evidence.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{10. Demonstration Path}
+
+%   \begin{block}{Demo objective}
+%     Show the complete path from HAL metadata to generated outputs, and identify where manual validation enters the workflow.
+%   \end{block}
+
+%   \begin{enumerate}
+%     \item Run: \texttt{python hal\_acentauri\_hceres\_poc.py --output-dir outputs}
+%     \item Inspect: \texttt{outputs/reports/hceres\_summary\_report.md}
+%     \item Open generated LaTeX tables and figures.
+%     \item Review optional enrichment files: \texttt{acentauri\_members.csv}, \texttt{theme\_mapping.csv}, \texttt{scimago\_journals.csv}, and \texttt{core\_conferences.csv}.
+%   \end{enumerate}
+
+%   \begin{block}{Key message}
+%     The value is not only the final report, but the auditable path from HAL metadata to each indicator.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{11. Narrated Video Synchronization}
+
+%   \begin{block}{Goal}
+%     Make the video easier to follow by aligning each slide duration with its spoken explanation.
+%   \end{block}
+
+%   \begin{enumerate}
+%     \item Each slide has a dedicated narration paragraph.
+%     \item The text-to-speech voice is slowed down to improve comprehension.
+%     \item Each slide duration is computed from the generated audio.
+%     \item Natural pauses are preserved to avoid a rushed or artificial voice.
+%     \item A title card is inserted before the slide sequence.
+%   \end{enumerate}
+
+%   \begin{block}{AI support}
+%     Codex generated the script, adjusted the voice speed, normalized the audio, and regenerated the final MP4.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{12. Limitations and Next Steps}
+
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.50\textwidth}
+%       \textbf{Current limitations}
+%       \begin{itemize}
+%         \item HAL metadata can be incomplete or heterogeneous.
+%         \item Member identification is partly inferred without a validated CSV.
+%         \item Theme attribution requires ARC/RIC/MOC mapping.
+%         \item Partner classification remains heuristic.
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.46\textwidth}
+%       \textbf{Next steps}
+%       \begin{itemize}
+%         \item Validate the member list.
+%         \item Provide theme mapping.
+%         \item Add Scimago and CORE reference data.
+%         \item Add domain-level quality control before institutional use.
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{13. AI Time-Saving Assessment}
+
+%   \small
+%   \begin{tabular}{>{\bfseries}p{0.34\textwidth}p{0.56\textwidth}}
+%     AI tools used & ChatGPT and Codex. \\
+%     Tasks supported & Idea structuring, implementation, debugging, tests, documentation, report generation, slide drafting, and video generation. \\
+%     Estimated time without AI & More than one week, estimated at over 40 hours. \\
+%     Estimated time with AI & About 3 hours. \\
+%     Estimated time saved & More than 37 hours, i.e. several working days. \\
+%   \end{tabular}
+
+%   \vspace{0.8em}
+%   \begin{block}{Assessment}
+%     AI was effective for producing a first end-to-end implementation and presentation package. Human validation remains necessary for institutional interpretation, member lists, theme mapping, and final quality control.
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{14. Conclusion}
+
+%   \begin{block}{Main contribution}
+%     A reproducible POC that turns HAL metadata into a first HCERES-oriented analysis package: tables, figures, report files, and explicit validation gaps.
+%   \end{block}
+
+%   \begin{itemize}
+%     \item AI agents can accelerate practical research-administration tooling.
+%     \item The generated pipeline remains deterministic, local, and auditable.
+%     \item The next improvement will come from validated local data, not from automation alone.
+%   \end{itemize}
+
+%   \vfill
+%   \scriptsize Suggested timing: about 1.5--2 minutes per content slide, with a short live or file-based demo.
+% \end{frame}
+
+% \begin{frame}
+%   \SlideTitle{15. Video Generation Workflow}
+
+%   \begin{block}{Generation workflow}
+%     The final MP4 was generated automatically from the Beamer PDF and the narration script.
+%   \end{block}
+
+%   \begin{enumerate}
+%     \item Compile the Beamer source to PDF with \texttt{pdflatex}.
+%     \item Render each PDF page as a PNG image with \texttt{pdftoppm}.
+%     \item Generate one audio narration per slide with \texttt{edge-tts}.
+%     \item Normalize audio with \texttt{ffmpeg}.
+%     \item Create one still-image video clip per slide.
+%     \item Match each clip duration to its narration and concatenate all clips.
+%   \end{enumerate}
+
+%   \begin{block}{Result}
+%     The final video contains a title card, narrated slides, slower speech, and more natural pauses.
+%   \end{block}
+% \end{frame}
+
+% \end{document}
+
+\documentclass[10pt,aspectratio=169]{beamer}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{lmodern}
-\usepackage{booktabs}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[absolute,overlay]{textpos}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{frametitle}{}
+\setbeamersize{text margin left=1.05cm,text margin right=1.05cm}
 
 \definecolor{inriablue}{RGB}{22,65,148}
+\definecolor{darkgraytext}{RGB}{45,45,45}
+
+\setbeamercolor{normal text}{fg=darkgraytext}
 \setbeamercolor{structure}{fg=inriablue}
-\setbeamercolor{title}{fg=white,bg=inriablue}
-\setbeamercolor{frametitle}{fg=inriablue}
+\setbeamercolor{block title}{fg=white,bg=inriablue}
+\setbeamercolor{block body}{fg=darkgraytext,bg=black!3}
+\setbeamerfont{block title}{series=\bfseries}
+
+\usebackgroundtemplate{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{ACENTAURI_template_no_text_one_page.pdf}%
+}
+
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+
+\newcommand{\SlideTitle}[1]{%
+  \begin{textblock}{14.8}(1.05,0.18)
+    {\Large\bfseries\color{inriablue}#1}
+  \end{textblock}
+  \vspace*{1.15cm}
+}
+
+\newcommand{\SimpleBox}[1]{%
+  \begin{beamercolorbox}[
+    rounded=true,
+    shadow=false,
+    sep=0.45em,
+    wd=\linewidth
+  ]{block body}
+  \centering
+  #1
+  \end{beamercolorbox}
+}
 
 \begin{document}
 
-\begin{frame}{1. HAL ACENTAURI HCERES POC}
+\begin{frame}[t]
+  \SlideTitle{1. HAL ACENTAURI HCERES POC}
+
   \large
-  Automating a first reproducible bibliometric analysis to support HCERES-style evaluation preparation.
+  A reproducible bibliometric pipeline to support HCERES-style evaluation preparation.
 
   \vspace{0.8em}
-  \begin{block}{Problem}
-    Preparing an HCERES-style evaluation requires a reliable synthesis of scientific output, collaborations, publication venues, and open science indicators.
+
+  \begin{block}{Main message}
+    The goal is not to automate the evaluation itself, but to generate a verifiable working basis for expert validation.
   \end{block}
 
   \begin{itemize}
-    \item Most of the data already exists in HAL, but metadata is heterogeneous.
-    \item Manual extraction is slow, hard to reproduce, and difficult to audit.
-    \item The objective is not a final institutional report, but a verifiable working basis.
+    \item Context: ACENTAURI scientific production indexed in HAL.
+    \item Goal: produce deterministic tables, figures, and report artifacts.
+    \item Constraint: keep every result auditable and rerunnable.
   \end{itemize}
 
   \vfill
-  \scriptsize INRIA / ACENTAURI -- Summary presentation -- \today
+  \scriptsize Inria / ACENTAURI -- Summary presentation -- \today
 \end{frame}
 
-\begin{frame}{2. Goal of the POC}
-  \begin{block}{Objective}
-    Build a local, deterministic, and rerunnable pipeline to produce a first bibliometric analysis of the ACENTAURI team from HAL.
+\begin{frame}[t]
+  \SlideTitle{2. Problem Addressed}
+
+  \begin{block}{Evaluation preparation is data-heavy}
+    HCERES-style preparation requires a reliable synthesis of publications, collaborations, venues, open-science indicators, and validation gaps.
   \end{block}
 
+  \vspace{0.3cm}
+
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.48\textwidth}
-      \textbf{Inputs}
+    \begin{column}{0.50\textwidth}
+      \textbf{Current bottlenecks}
       \begin{itemize}
-        \item HAL query or structure identifier;
-        \item analysis period;
-        \item optional CSV files: members, themes, Scimago, CORE.
+        \item HAL metadata is available but heterogeneous.
+        \item Manual extraction is repetitive and slow.
+        \item Inconsistencies are hard to detect afterwards.
+        \item Missing information is often mixed with verified information.
       \end{itemize}
     \end{column}
-    \begin{column}{0.48\textwidth}
-      \textbf{Outputs}
+
+    \begin{column}{0.46\textwidth}
+      \textbf{Expected support}
       \begin{itemize}
-        \item CSV and LaTeX tables;
-        \item figures;
-        \item Markdown report;
-        \item standalone LaTeX report.
+        \item Produce a first clean working basis.
+        \item Separate computed, inferred, manual, and missing data.
+        \item Make the validation workload explicit.
+        \item Keep outputs reproducible.
       \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{3. Framing Prompt Given to the AI}
+\begin{frame}[t]
+  \SlideTitle{3. Proposed Solution}
+
+  \begin{block}{Core idea}
+    Build a local, deterministic, and rerunnable pipeline that transforms HAL metadata into HCERES-oriented indicators and report artifacts.
+  \end{block}
+
+  \vspace{0.6cm}
+
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.27\textwidth}
+      \SimpleBox{\textbf{Inputs}\\[0.2em] HAL API\\ Optional CSV files}
+    \end{column}
+
+    \begin{column}{0.08\textwidth}
+      \centering
+      {\Large\color{inriablue}$\rightarrow$}
+    \end{column}
+
+    \begin{column}{0.30\textwidth}
+      \SimpleBox{\textbf{Python POC}\\[0.2em] \texttt{hal\_acentauri\_hceres\_poc.py}}
+    \end{column}
+
+    \begin{column}{0.08\textwidth}
+      \centering
+      {\Large\color{inriablue}$\rightarrow$}
+    \end{column}
+
+    \begin{column}{0.27\textwidth}
+      \SimpleBox{\textbf{Outputs}\\[0.2em] Tables\\ Figures\\ Reports}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.6cm}
+
+  \begin{block}{Design principle}
+    Optional CSV files enrich or correct the analysis, but they are not blocking dependencies.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{4. AI-Agent Development Workflow}
+
+  \vspace{0.3cm}
+
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.18\textwidth}
+      \SimpleBox{\textbf{Need}\\ HCERES preparation}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.18\textwidth}
+      \SimpleBox{\textbf{Prompt}\\ Technical specification}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.18\textwidth}
+      \SimpleBox{\textbf{Codex}\\ Implementation}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \SimpleBox{\textbf{Human validation}\\ Assumptions and outputs}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.8cm}
+
+  \begin{block}{Key message}
+    AI is used as an accelerator inside a validation loop, not as an institutional oracle.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{5. Initial Prompt to the AI}
+
   \small
-  \begin{block}{Prompt reconstructed from the repository}
-    \emph{Create a simple, monolithic Python proof of concept to automate a HAL-based bibliometric analysis of the ACENTAURI team in a format useful for HCERES preparation.}
+
+  \begin{block}{Reconstructed specification}
+    \emph{Create a simple, monolithic Python proof of concept that automates a HAL-based bibliometric analysis of the ACENTAURI team for HCERES-style evaluation preparation.}
   \end{block}
 
   \begin{itemize}
     \item Query HAL automatically, with structure discovery or explicit override.
-    \item Clean, filter, and deduplicate publications.
-    \item Compute indicators: output, authors, document types, collaborations, venues, open science.
-    \item Accept optional CSV files as enrichments, without making them blocking dependencies.
-    \item Generate deterministic reports, with no paid LLM API and no invented content.
+    \item Clean, filter, and deduplicate publication records.
+    \item Compute indicators on output, authors, document types, collaborations, venues, and open science.
+    \item Accept optional CSV files as enrichments without making them mandatory.
+    \item Generate deterministic reports with explicit provenance and no invented content.
   \end{itemize}
 
   \vspace{0.4em}
+
   \scriptsize
-  Note: the exact prompt is not versioned in the repository; this slide summarizes the implicit specification reflected by the generated code.
+  The exact prompt was not versioned; this slide summarizes the specification reflected by the generated code.
 \end{frame}
 
-\begin{frame}{4. Generated Pipeline}
-  \begin{enumerate}
-    \item Discover the HAL query or use an explicit structure identifier.
-    \item Retrieve HAL records through paginated API calls.
-    \item Normalize metadata: title, authors, dates, types, affiliations, DOI, files.
-    \item Filter out non-target records: theses, HDR, reports, lectures, undefined categories.
-    \item Deduplicate records and identify ACENTAURI members.
-    \item Compute indicators and export deliverables.
-  \end{enumerate}
+\begin{frame}[t]
+  \SlideTitle{6. Implementation Pipeline}
 
-  \begin{block}{Design principle}
-    The script distinguishes verified HAL metadata, inferred information, manually supplied data, and unavailable information.
+  \vspace{0.2cm}
+
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.14\textwidth}
+      \SimpleBox{\textbf{1}\\ Discover HAL query}
+    \end{column}
+    \begin{column}{0.03\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.14\textwidth}
+      \SimpleBox{\textbf{2}\\ Retrieve records}
+    \end{column}
+    \begin{column}{0.03\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.14\textwidth}
+      \SimpleBox{\textbf{3}\\ Normalize metadata}
+    \end{column}
+    \begin{column}{0.03\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.14\textwidth}
+      \SimpleBox{\textbf{4}\\ Filter and deduplicate}
+    \end{column}
+    \begin{column}{0.03\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.14\textwidth}
+      \SimpleBox{\textbf{5}\\ Compute indicators}
+    \end{column}
+    \begin{column}{0.03\textwidth}
+      \centering $\rightarrow$
+    \end{column}
+    \begin{column}{0.14\textwidth}
+      \SimpleBox{\textbf{6}\\ Generate artifacts}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+
+  \begin{block}{Generated artifacts}
+    CSV tables, LaTeX tables, figures, collaboration network exports, Markdown report, and standalone LaTeX report.
+  \end{block}
+
+  \begin{block}{Key message}
+    The useful part is not only the final report, but the auditable path from HAL metadata to each indicator.
   \end{block}
 \end{frame}
 
-\begin{frame}{5. Results, Limitations, and Next Steps}
+\begin{frame}[t]
+  \SlideTitle{7. Provenance and Trust Levels}
+
+  \vspace{0.25cm}
+
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.23\textwidth}
+      \SimpleBox{\textbf{Verified}\\ HAL metadata}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \SimpleBox{\textbf{Inferred}\\ information}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \SimpleBox{\textbf{Manual}\\ CSV enrichment}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \SimpleBox{\textbf{Missing}\\ unavailable data}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+
+  \begin{block}{Report principle}
+    The report exposes what is computed, inferred, manually supplied, or still requiring validation.
+  \end{block}
+
+  \begin{block}{Why it matters}
+    For institutional use, the value is not automation alone. The value is a transparent basis for expert validation.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{8. Generated Artifacts}
+
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.50\textwidth}
-      \textbf{Existing run results}
+    \begin{column}{0.48\textwidth}
+      \textbf{Repository deliverables}
       \begin{itemize}
-        \item 69 HAL records retrieved;
-        \item 58 publications retained;
-        \item 31 members identified or inferred;
-        \item Markdown, LaTeX, and PDF reports generated.
+        \item Single Python module: \texttt{hal\_acentauri\_hceres\_poc.py}.
+        \item CLI options for period, team, output directory, and optional CSV files.
+        \item Static smoke tests.
+        \item README and example CSV files.
       \end{itemize}
     \end{column}
-    \begin{column}{0.46\textwidth}
-      \textbf{To consolidate}
+
+    \begin{column}{0.48\textwidth}
+      \textbf{Generated outputs}
       \begin{itemize}
-        \item validate the member list;
-        \item provide the ARC/RIC/MOC mapping;
-        \item add Scimago and CORE data;
-        \item review partner classifications.
+        \item CSV and LaTeX tables.
+        \item Figures and collaboration network exports.
+        \item Markdown summary report.
+        \item Standalone LaTeX report.
       \end{itemize}
     \end{column}
   \end{columns}
 
-  \begin{block}{Next step}
-    Move from POC to reliable deliverable by versioning validation CSV files and adding domain-level quality control before institutional use.
+  \vspace{0.35cm}
+
+  \begin{block}{Reproducibility}
+    The pipeline can be rerun locally; outputs change only when HAL metadata or optional validation CSV files change.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{9. Inside the Deterministic Report}
+
+  \small
+
+  \begin{block}{Report logic}
+    The report is not free-form text invented by an LLM. It is assembled from computed indicators, explicit metadata provenance, and known validation gaps.
+  \end{block}
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \textbf{Scope and production}
+      \begin{itemize}
+        \item Team: ACENTAURI.
+        \item Period: 2022--2026.
+        \item HAL query: \texttt{structId\_i:1069625}.
+        \item Raw HAL records: 69.
+        \item Publications retained: 58.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \textbf{Audit-oriented sections}
+      \begin{itemize}
+        \item Top authors and venues.
+        \item Collaboration patterns.
+        \item Open-science indicators.
+        \item Missing optional data.
+        \item Limitations and validation needs.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \begin{block}{Example limitation}
+    Theme attribution is reliable only for authors present in the theme mapping CSV or otherwise discoverable from metadata.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{10. First Results Obtained}
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.50\textwidth}
+      \textbf{Existing run results}
+      \begin{itemize}
+        \item 69 HAL records retrieved.
+        \item 58 publications retained.
+        \item 31 members identified or inferred.
+        \item Markdown, LaTeX, and PDF reports generated.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.46\textwidth}
+      \textbf{Open-science indicators}
+      \begin{itemize}
+        \item 56 publications with full text in HAL.
+        \item 2 publications without full text in HAL.
+        \item 24 publications with DOI.
+        \item 55 English publications and 3 French publications.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.35cm}
+
+  \begin{block}{Interpretation}
+    These numbers provide a first audit basis, not a final institutional validation.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{11. Demonstration Path}
+
+  \begin{block}{Demo goal}
+    Show the complete path from execution to generated outputs, then indicate where manual validation enters the workflow.
+  \end{block}
+
+  \begin{enumerate}
+    \item Run: \texttt{python hal\_acentauri\_hceres\_poc.py --output-dir outputs}
+    \item Inspect: \texttt{outputs/reports/hceres\_summary\_report.md}
+    \item Open generated LaTeX tables and figures.
+    \item Explain optional enrichment files:
+      \texttt{acentauri\_members.csv}, \texttt{theme\_mapping.csv},
+      \texttt{scimago\_journals.csv}, \texttt{core\_conferences.csv}.
+  \end{enumerate}
+
+  \begin{block}{Message for the demo}
+    The final report is useful because every indicator can be traced back to the pipeline step that produced it.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{12. Narrated Video Synchronization}
+
+  \begin{block}{Goal}
+    Make the narrated video easier to follow by aligning each slide duration with its spoken explanation.
+  \end{block}
+
+  \begin{enumerate}
+    \item Each slide has a dedicated narration paragraph.
+    \item The TTS voice is slowed down to improve comprehension.
+    \item Each slide clip duration is computed from the generated audio.
+    \item Long TTS silences are compressed to avoid empty waiting time.
+    \item A title card is inserted before the slide sequence.
+  \end{enumerate}
+
+  \begin{block}{AI support}
+    Codex created the video-generation script, adjusted the voice speed, compressed silences, and regenerated the final MP4.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{13. How This Video Was Generated}
+
+  \begin{block}{Generation workflow}
+    The final MP4 was generated automatically from the Beamer PDF and the narration script.
+  \end{block}
+
+  \begin{enumerate}
+    \item Compile the Beamer source to PDF with \texttt{pdflatex}.
+    \item Render each PDF page as a PNG image with \texttt{pdftoppm}.
+    \item Generate one audio narration per slide with \texttt{edge-tts}.
+    \item Slow down the TTS voice to improve clarity.
+    \item Compress long TTS silences with \texttt{ffmpeg}.
+    \item Create one still-image video clip per slide.
+    \item Match each clip duration to its narration audio.
+    \item Concatenate all clips into the final MP4.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{14. Limitations and Next Steps}
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.50\textwidth}
+      \textbf{Current limitations}
+      \begin{itemize}
+        \item HAL metadata can be incomplete or heterogeneous.
+        \item Member identification is partly inferred without a validated CSV.
+        \item Theme attribution requires ARC/RIC/MOC mapping.
+        \item Partner classification is heuristic.
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.46\textwidth}
+      \textbf{Next steps}
+      \begin{itemize}
+        \item Validate the member list.
+        \item Provide theme mapping.
+        \item Add Scimago and CORE reference data.
+        \item Add domain-level quality control before institutional use.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.4cm}
+
+  \begin{block}{Conclusion}
+    AI accelerates implementation; deterministic processing makes outputs reproducible; human validation gives the result institutional value.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]
+  \SlideTitle{15. Self-Assessment and Conclusion}
+
+  \small
+
+  \begin{tabular}{>{\bfseries}p{0.34\textwidth}p{0.56\textwidth}}
+    AI tools used & ChatGPT and Codex. \\
+    Tasks supported by AI & Idea structuring, implementation, debugging, tests, documentation, report generation, slide drafting, and video generation. \\
+    Estimated time without AI & More than one week, estimated at more than 40 hours. \\
+    Estimated time with AI & About 3 hours. \\
+    Estimated time saved & More than 37 hours, i.e. several working days. \\
+  \end{tabular}
+
+  \vspace{0.7cm}
+
+  \begin{block}{Final message}
+    AI accelerates implementation; deterministic processing ensures reproducibility; human validation gives institutional value.
   \end{block}
 \end{frame}
 

@@ -8,7 +8,7 @@ The implementation is deliberately simple: a single Python module named:
 hal_acentauri_hceres_poc.py
 ```
 
-The report generation is now fully deterministic and template-based. It does not use the OpenAI API or any paid external LLM API.
+The report generation is deterministic and template-based. Paid AI APIs were used during development and material preparation, while the generated report content itself is produced from computed indicators and explicit metadata provenance.
 
 ## What it does
 
