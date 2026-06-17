@@ -1,0 +1,377 @@
+\documentclass[a4paper,11pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{caption}
+
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% --- Colors ---
+\definecolor{inriared}{RGB}{227,6,19}
+\definecolor{inriablue}{RGB}{0,80,145}
+\definecolor{sectionblue}{RGB}{0,60,120}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{80,80,80}
+\definecolor{successgreen}{RGB}{16,185,129}
+\definecolor{warningorange}{RGB}{245,158,11}
+
+% --- Hyperlinks ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor=inriablue,
+  urlcolor=inriablue,
+  citecolor=inriablue
+}
+
+% --- Headers/Footers ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{darkgray}{Rapport bibliométrique HCERES — ACENTAURI}}
+\fancyhead[R]{\small\textcolor{darkgray}{2022–2026}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- Section styling ---
+\titleformat{\section}{\Large\bfseries\color{sectionblue}}{}{0em}{\thesection.~}
+\titleformat{\subsection}{\large\bfseries\color{sectionblue!80}}{}{0em}{\thesubsection~}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{sectionblue!60}}{}{0em}{}
+
+% --- Title ---
+\title{
+  \vspace{-1cm}
+  {\large\textcolor{darkgray}{Haut Conseil de l'Évaluation de la Recherche et de l'Enseignement Supérieur}}\\[0.3cm]
+  \rule{\textwidth}{1.5pt}\\[0.4cm]
+  {\LARGE\bfseries Rapport bibliométrique}\\[0.2cm]
+  {\LARGE\bfseries\textcolor{inriablue}{Équipe-projet ACENTAURI}}\\[0.3cm]
+  {\large INRIA Sophia Antipolis $\cdot$ Université Côte d'Azur}\\[0.2cm]
+  \rule{\textwidth}{1.5pt}\\[0.3cm]
+  {\normalsize Période d'évaluation : 2022--2026}
+}
+\author{}
+\date{\textcolor{darkgray}{\today}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\tableofcontents
+\newpage
+
+%% ================================================================
+\section{Présentation générale}
+%% ================================================================
+
+\subsection{Périmètre de l'équipe}
+
+L'équipe-projet \textbf{ACENTAURI} (\textit{Intelligence artificielle et algorithmes efficaces pour la robotique autonome}) est rattachée au \textbf{Centre Inria d'Université Côte d'Azur}, au sein du laboratoire I3S (Laboratoire d'Informatique, Signaux et Systèmes de Sophia Antipolis, UMR 7271). Ses tutelles incluent l'\textbf{INRIA}, le \textbf{CNRS} et l'\textbf{Université Côte d'Azur}. L'équipe est localisée à Sophia Antipolis (Alpes-Maritimes).
+
+ACENTAURI concentre ses travaux sur la robotique autonome, la perception visuelle, la navigation intelligente et les systèmes de transport intelligents. Son positionnement se situe à l'intersection de la vision par ordinateur, de la commande robotique et de l'intelligence artificielle appliquée à la mobilité autonome.
+
+\subsection{Sources de données et méthodologie}
+
+Le présent rapport repose sur une extraction automatisée des métadonnées de publications déposées sur la plateforme \textbf{HAL} (Hyper Articles en Ligne). Le traitement a inclus les étapes suivantes :
+
+\begin{itemize}[nosep]
+  \item Extraction de \textbf{69 notices HAL} brutes couvrant la période 2022--2026
+  \item Application de filtres de qualité et de pertinence : \textbf{11 notices exclues}
+  \item Suppression des doublons : \textbf{0 doublon} identifié après filtrage
+  \item Corpus final retenu : \textbf{58 publications uniques}
+  \item Identification de \textbf{31 membres} de l'équipe (par recoupement des affiliations)
+\end{itemize}
+
+\subsection{Limites et précautions d'interprétation}
+
+\begin{itemize}
+  \item \textbf{Données 2026 partielles} : le corpus 2026 ne couvre que le premier semestre (7~publications au 16~juin~2026), rendant toute comparaison annuelle prématurée.
+  \item \textbf{Identification des membres} : la liste des 31 membres est inférée à partir des chaînes d'affiliation HAL, ce qui peut inclure des collaborateurs externes ou omettre des membres n'ayant pas publié.
+  \item \textbf{Partenaires institutionnels} : le classement des partenaires est déduit des chaînes d'affiliation et peut surestimer certaines entités.
+  \item \textbf{Couverture HAL} : certains travaux publiés dans des conférences internationales peuvent ne pas avoir été systématiquement déposés.
+\end{itemize}
+
+%% ================================================================
+\section{Production scientifique}
+%% ================================================================
+
+\subsection{Volume global}
+
+Sur la période 2022--2026, l'équipe totalise \textbf{58 publications uniques} :
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccc}
+\toprule
+\textbf{Année} & \textbf{Publications} & \textbf{Évolution} \\
+\midrule
+2022 & 9  & --- \\
+2023 & 8  & $-11{,}1\,\%$ \\
+2024 & 13 & $+62{,}5\,\%$ \\
+2025 & 21 & $+61{,}5\,\%$ \\
+2026\textsuperscript{*} & 7  & \textit{(partiel)} \\
+\bottomrule
+\end{tabular}
+\caption{Évolution annuelle de la production scientifique. \textsuperscript{*}Données au 16 juin 2026.}
+\end{table}
+
+\subsection{Analyse des tendances}
+
+La trajectoire révèle une \textbf{dynamique de croissance très nette à partir de 2024}. Après une stabilité basse en 2022--2023 (8--9~publications/an), la production connaît un doublement en 2024 ($+62{,}5\,\%$) puis un nouveau bond en 2025 ($+61{,}5\,\%$), atteignant \textbf{21~publications} --- le point culminant de la période. Cette accélération suggère une montée en puissance liée à l'arrivée de nouveaux doctorants et à la maturation de projets initiés en début de période.
+
+L'année 2026, bien que partielle, affiche déjà 7~publications. En extrapolation linéaire, l'équipe pourrait atteindre 14--16~publications sur l'année complète.
+
+\subsection{Indicateurs de productivité}
+
+\begin{itemize}[nosep]
+  \item \textbf{Ratio publications/membre} : 1,87 --- modeste mais cohérent avec une équipe incluant des doctorants en démarrage.
+  \item \textbf{Médiane} : 1 publication par auteur, indiquant une distribution asymétrique.
+  \item \textbf{Publications multi-auteurs} : 56/58 (96,6\,\%), signe d'une production fortement collaborative.
+\end{itemize}
+
+%% ================================================================
+\section{Répartition par type de document}
+%% ================================================================
+
+\subsection{Ventilation globale}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Type} & \textbf{Nombre} & \textbf{Part} \\
+\midrule
+Communications (COMM) & 44 & 75,9\,\% \\
+Articles de revue (ART) & 13 & 22,4\,\% \\
+Posters (POSTER) & 1 & 1,7\,\% \\
+\bottomrule
+\end{tabular}
+\caption{Répartition des publications par type de document.}
+\end{table}
+
+\subsection{Analyse du ratio conférences/revues}
+
+Avec un ratio de \textbf{3,4 communications pour 1 article de revue}, le profil est fortement orienté vers les conférences. Ce ratio est \textbf{cohérent avec les pratiques du domaine de la robotique et de la vision par ordinateur}, où les conférences de premier plan (IROS, ICRA, IV, ICCV) constituent des lieux de publication prestigieux avec des taux d'acceptation compétitifs (souvent $< 30\,\%$).
+
+\subsection{Points d'attention}
+
+Le nombre d'\textbf{articles de revue (13)} reste relativement faible. Un renforcement de la production dans des revues à comité de lecture (IEEE T-RO, IEEE RA-L, IEEE T-ITS) serait souhaitable pour consolider l'impact bibliométrique à long terme. L'absence d'ouvrages ou de chapitres d'ouvrage est à noter, même si cela est courant dans le domaine.
+
+%% ================================================================
+\section{Auteurs et dynamique d'équipe}
+%% ================================================================
+
+\subsection{Principaux contributeurs}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Auteur} & \textbf{Pubs} & \textbf{1\textsuperscript{er} auteur} & \textbf{Rôle inféré} \\
+\midrule
+Philippe Martinet  & 38 & 0 & Encadrant principal \\
+Ezio Malis         & 30 & 2 & Encadrant senior \\
+Minh-Quan Dao      & 7  & 3 & Contributeur actif \\
+Emmanuel Alao      & 7  & 7 & Doctorant/Post-doc \\
+Nicolas Gutowski   & 6  & 0 & Collaborateur \\
+Lounis Adouane     & 6  & 0 & Collaborateur \\
+Fabien Lionti      & 6  & 6 & Doctorant/Post-doc \\
+Sébastien Aubin    & 6  & 0 & Collaborateur \\
+Ziming Liu         & 5  & 4 & Doctorant/Post-doc \\
+Vincent Frémont    & 5  & 0 & Collaborateur \\
+\bottomrule
+\end{tabular}
+\caption{Top 10 des auteurs par nombre de publications.}
+\end{table}
+
+\subsection{Structure d'encadrement}
+
+\textbf{Philippe Martinet} co-signe 38 des 58 publications (65,5\,\%) sans jamais apparaître comme premier auteur --- profil caractéristique d'un responsable d'équipe. \textbf{Ezio Malis} co-signe 30 publications (51,7\,\%) avec un profil similaire. Ces deux chercheurs couvrent la quasi-totalité de la production, signe de \textbf{cohérence scientifique forte} mais aussi de \textbf{risque de dépendance}.
+
+\subsection{Leadership des jeunes chercheurs}
+
+Plusieurs contributeurs présentent un ratio premier auteur/publications élevé :
+
+\begin{itemize}[nosep]
+  \item Emmanuel Alao : 7/7 (100\,\%) --- Fabien Lionti : 6/6 (100\,\%)
+  \item Ziming Liu : 4/5 (80\,\%) --- Enrico Fiasché : 4/4 (100\,\%)
+  \item Diego Navarro : 3/4 (75\,\%) --- Minh-Quan Dao : 3/7 (43\,\%)
+\end{itemize}
+
+Ce vivier de jeunes chercheurs publiant en premier auteur est un \textbf{indicateur positif de la capacité de formation} de l'équipe.
+
+%% ================================================================
+\section{Supports de publication (Venues)}
+%% ================================================================
+
+\subsection{Principales venues ciblées}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llc}
+\toprule
+\textbf{Venue} & \textbf{Type} & \textbf{Pubs} \\
+\midrule
+IROS (toutes éditions) & Conférence & $\sim$8 \\
+IV (toutes éditions) & Conférence & $\sim$6 \\
+IEEE Robotics and Automation Letters & Revue & 3 \\
+IEEE T-ITS & Revue & 2 \\
+ICRA (workshops inclus) & Conférence & 2 \\
+ICCV 2025 & Conférence & 1 \\
+IEEE T-RO & Revue & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Principales venues de publication.}
+\end{table}
+
+\subsection{Positionnement}
+
+L'équipe publie dans les \textbf{venues de référence internationale} en robotique : IROS ($\sim$8~publications), IV ($\sim$6), IEEE RA-L (3). La présence à ICCV 2025 témoigne d'une ouverture vers la communauté vision par ordinateur.
+
+L'équipe publie dans \textbf{49 venues distinctes} pour 58 publications, signe de diversification mais aussi de dispersion potentielle. Quelques publications dans des supports peu reconnus (UTTAR PRADESH JOURNAL OF ZOOLOGY) mériteraient vérification.
+
+%% ================================================================
+\section{Collaborations et rayonnement international}
+%% ================================================================
+
+\subsection{Indicateurs de collaboration}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Indicateur} & \textbf{Valeur} \\
+\midrule
+Publications avec partenaires extérieurs & 58 (100\,\%) \\
+Partenaires institutionnels distincts & 141 \\
+Pays collaborateurs & 18 \\
+\bottomrule
+\end{tabular}
+\caption{Synthèse des indicateurs de collaboration.}
+\end{table}
+
+\subsection{Principaux partenaires}
+
+Au-delà des tutelles directes, les principaux partenaires académiques sont :
+
+\begin{itemize}[nosep]
+  \item \textbf{LS2N / Nantes Université / ECN / IMT Atlantique} : 11 co-publications
+  \item \textbf{ARMEN} (Autonomie des Robots, Nantes) : 9 co-publications
+  \item \textbf{Heudiasyc / UTC Compiègne} : 7 co-publications
+  \item \textbf{Inria Grenoble Alpes} : 6 co-publications
+  \item \textbf{LERIA / Université d'Angers} : 5 co-publications
+\end{itemize}
+
+\subsection{Répartition géographique}
+
+Avec \textbf{18 pays collaborateurs}, l'équipe démontre un rayonnement diversifié : États-Unis (7~pubs), Chine (5), Roumanie (4), Corée du Sud (3), Émirats Arabes Unis (3), Autriche (3), ainsi que l'Italie, Singapour, le Portugal, le Japon, l'Australie, l'Allemagne et d'autres.
+
+\subsection{Collaborations académiques vs. industrielles}
+
+L'analyse révèle une prédominance des \textbf{collaborations académiques}. Aucun partenaire industriel majeur n'est clairement identifié parmi les co-publications --- un axe d'amélioration potentiel.
+
+%% ================================================================
+\section{Science ouverte}
+%% ================================================================
+
+\subsection{Texte intégral sur HAL}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{cccccc}
+\toprule
+\textbf{Année} & \textbf{Pubs} & \textbf{Texte intégral} & \textbf{Taux} & \textbf{DOI} \\
+\midrule
+2022 & 9  & 9  & 100\,\%   & 6 \\
+2023 & 8  & 8  & 100\,\%   & 2 \\
+2024 & 13 & 13 & 100\,\%   & 6 \\
+2025 & 21 & 20 & 95,2\,\%  & 10 \\
+2026\textsuperscript{*} & 7  & 6  & 85,7\,\%  & 0 \\
+\midrule
+\textbf{Total} & \textbf{58} & \textbf{56} & \textbf{96,6\,\%} & \textbf{24} \\
+\bottomrule
+\end{tabular}
+\caption{Indicateurs de science ouverte par année.}
+\end{table}
+
+Le taux de \textbf{96,6\,\% de texte intégral} est \textbf{remarquable}, bien au-dessus de la moyenne nationale ($\sim$50--60\,\%).
+
+\subsection{Couverture DOI}
+
+Avec seulement \textbf{41,4\,\%} des publications disposant d'un DOI, l'équipe présente un déficit significatif. Ce constat suggère un \textbf{problème de renseignement des métadonnées HAL} plutôt qu'une absence réelle de DOI, les publications IEEE disposant systématiquement d'un identifiant DOI.
+
+\subsection{Répartition linguistique}
+
+La quasi-totalité de la production est rédigée en \textbf{anglais} (55/58, soit 94,8\,\%), conforme aux standards du domaine. Les 3~publications en français correspondent à des communications nationales.
+
+%% ================================================================
+\section{Synthèse et recommandations}
+%% ================================================================
+
+\subsection{Analyse SWOT}
+
+\subsubsection{Forces}
+\begin{itemize}[nosep]
+  \item Croissance remarquable de la production ($+133\,\%$ entre 2023 et 2025)
+  \item Positionnement dans les venues de référence (IROS, IV, ICRA, IEEE RA-L)
+  \item Taux exceptionnel de science ouverte (96,6\,\% de texte intégral)
+  \item Rayonnement international diversifié (18 pays)
+  \item Formation efficace de jeunes chercheurs publiant en premier auteur
+\end{itemize}
+
+\subsubsection{Faiblesses}
+\begin{itemize}[nosep]
+  \item Ratio revues/conférences déséquilibré (22\,\% d'articles de revue)
+  \item Concentration de la production sur deux encadrants ($>60\,\%$ des pubs)
+  \item Couverture DOI insuffisante dans les métadonnées HAL (41\,\%)
+  \item Productivité moyenne par membre modeste (1,87~pub/membre)
+\end{itemize}
+
+\subsubsection{Opportunités}
+\begin{itemize}[nosep]
+  \item Conversion des communications en articles de revue étendus
+  \item Ouverture vers de nouvelles communautés (ICCV --- vision par ordinateur)
+  \item Croissance soutenue pouvant se maintenir avec les projets en cours
+\end{itemize}
+
+\subsubsection{Menaces}
+\begin{itemize}[nosep]
+  \item Dépendance vis-à-vis de deux chercheurs seniors
+  \item Dispersion sur trop de venues (49 venues / 58 publications)
+  \item Absence visible de collaborations industrielles
+\end{itemize}
+
+\subsection{Recommandations opérationnelles}
+
+\begin{enumerate}
+  \item \textbf{Renforcer la production en revues} : viser 30--35\,\% d'articles de revue en encourageant les versions étendues dans IEEE T-RO, T-ITS ou RA-L.
+  \item \textbf{Consolider les métadonnées HAL} : campagne de mise à jour des DOI manquants, notamment pour 2023 et 2026.
+  \item \textbf{Développer les collaborations industrielles} : co-publications avec des partenaires du secteur automobile et robotique.
+  \item \textbf{Concentrer la stratégie de publication} : identifier 5--8 venues cibles prioritaires.
+  \item \textbf{Préparer la relève} : montée en compétences des jeunes permanents pour réduire la dépendance aux deux encadrants principaux.
+\end{enumerate}
+
+\subsection{Conclusion}
+
+L'équipe ACENTAURI présente un \textbf{profil bibliométrique dynamique et en forte progression} sur la période 2022--2026. La trajectoire de croissance, le positionnement dans les conférences majeures, l'excellent engagement en faveur de la science ouverte et la diversité des collaborations internationales constituent des atouts solides. Les axes d'amélioration identifiés sont des leviers aisément activables qui permettraient de consolider significativement l'impact bibliométrique pour la prochaine période contractuelle.
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}
+\begin{center}
+\small\textcolor{darkgray}{\textit{Rapport généré automatiquement à partir des métadonnées HAL --- Juin 2026.\\
+Les analyses et recommandations constituent un brouillon de travail devant être validé avant usage institutionnel.}}
+\end{center}
+
+\end{document}

@@ -1,0 +1,7 @@
+indicator,value,share,status
+publications_with_full_text_in_hal,56,0.9655172413793104,hal_metadata
+publications_without_full_text_in_hal,2,0.034482758620689655,hal_metadata
+publications_with_doi,24,0.41379310344827586,hal_metadata
+publications_without_doi,34,0.5862068965517241,hal_metadata
+english_publications,55,,approximate_language_metadata
+french_publications,3,,approximate_language_metadata

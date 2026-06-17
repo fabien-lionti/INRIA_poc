@@ -1,0 +1,5 @@
+indicator,value,status
+publications_with_external_partners,58.0,approximate_from_affiliations
+share_with_external_partners,1.0,approximate_from_affiliations
+distinct_external_partners,141.0,approximate_from_affiliations
+distinct_countries,18.0,hal_metadata_if_available

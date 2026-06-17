@@ -1,0 +1,142 @@
+partner,publication_count,partner_type_inferred,status
+Centre Inria d'Université Côte d'Azur,58,academic_or_public_research,inferred_from_affiliation_strings
+"Laboratoire d'Informatique, Signaux, et Systèmes de Sophia Antipolis",58,academic_or_public_research,inferred_from_affiliation_strings
+Institut National de Recherche en Informatique et en Automatique,58,academic_or_public_research,inferred_from_affiliation_strings
+Université Nice Sophia Antipolis (1965 - 2019),58,academic_or_public_research,inferred_from_affiliation_strings
+Centre National de la Recherche Scientifique,58,unknown,inferred_from_affiliation_strings
+Intelligence artificielle et algorithmes efficaces pour la robotique autonome,58,unknown,inferred_from_affiliation_strings
+"Signal, Images et Systèmes",58,unknown,inferred_from_affiliation_strings
+Université Côte d'Azur,58,academic_or_public_research,inferred_from_affiliation_strings
+Laboratoire des Sciences du Numérique de Nantes,11,academic_or_public_research,inferred_from_affiliation_strings
+IMT Atlantique,11,unknown,inferred_from_affiliation_strings
+NANTES UNIVERSITÉ - École Centrale de Nantes,11,academic_or_public_research,inferred_from_affiliation_strings
+Nantes Université - pôle Sciences et technologie,11,industrial_or_private,inferred_from_affiliation_strings
+Institut Mines-Télécom [Paris],11,academic_or_public_research,inferred_from_affiliation_strings
+Nantes Université,11,academic_or_public_research,inferred_from_affiliation_strings
+Nantes université - UFR des Sciences et des Techniques,11,academic_or_public_research,inferred_from_affiliation_strings
+Autonomie des Robots et Maîtrise des interactions avec l’ENvironnement,9,unknown,inferred_from_affiliation_strings
+Heuristique et Diagnostic des Systèmes Complexes [Compiègne],7,unknown,inferred_from_affiliation_strings
+Université de Technologie de Compiègne,7,industrial_or_private,inferred_from_affiliation_strings
+Centre Inria de l'Université Grenoble Alpes,6,academic_or_public_research,inferred_from_affiliation_strings
+Laboratoire d'Etudes et de Recherche en Informatique d'Angers,5,academic_or_public_research,inferred_from_affiliation_strings
+Université d'Angers,5,academic_or_public_research,inferred_from_affiliation_strings
+CITI Centre of Innovation in Telecommunications and Integration of services,5,unknown,inferred_from_affiliation_strings
+Institut National des Sciences Appliquées de Lyon,5,academic_or_public_research,inferred_from_affiliation_strings
+Université de Lyon,5,academic_or_public_research,inferred_from_affiliation_strings
+Institut National des Sciences Appliquées,5,academic_or_public_research,inferred_from_affiliation_strings
+Université Grenoble Alpes,4,academic_or_public_research,inferred_from_affiliation_strings
+Centre Inria de Lyon,4,academic_or_public_research,inferred_from_affiliation_strings
+Robots coopératifs et adaptés à la présence humaine en environnements,4,unknown,inferred_from_affiliation_strings
+Evaluation non destructive des structures et des matériaux,4,unknown,inferred_from_affiliation_strings
+"Centre d'Etudes et d'Expertise sur les Risques, l'Environnement, la Mobilité et l'Aménagement",4,unknown,inferred_from_affiliation_strings
+Université Marie et Louis Pasteur,3,academic_or_public_research,inferred_from_affiliation_strings
+Institut polytechnique de Grenoble - Grenoble Institute of Technology,3,industrial_or_private,inferred_from_affiliation_strings
+Université Bourgogne Franche-Comté [COMUE],3,academic_or_public_research,inferred_from_affiliation_strings
+École Centrale de Nantes,3,academic_or_public_research,inferred_from_affiliation_strings
+"Franche-Comté Électronique Mécanique, Thermique et Optique - Sciences et Technologies (UMR 6174)",2,industrial_or_private,inferred_from_affiliation_strings
+Laboratoire d'Informatique de Grenoble,2,academic_or_public_research,inferred_from_affiliation_strings
+Université de Technologie de Belfort-Montbeliard,2,industrial_or_private,inferred_from_affiliation_strings
+Ecole Nationale Supérieure de Mécanique et des Microtechniques,2,academic_or_public_research,inferred_from_affiliation_strings
+"Hamdard Institute of Engineering & Technology, Faculty of Engineering Sciences & Technology, Hamdard University, Karachi",2,industrial_or_private,inferred_from_affiliation_strings
+DGA Techniques Terrestres,2,unknown,inferred_from_affiliation_strings
+Université de Nantes,2,academic_or_public_research,inferred_from_affiliation_strings
+Université de Nantes - UFR des Sciences et des Techniques,2,academic_or_public_research,inferred_from_affiliation_strings
+Institut Pascal,2,academic_or_public_research,inferred_from_affiliation_strings
+Institut National Polytechnique (Toulouse),2,academic_or_public_research,inferred_from_affiliation_strings
+The University of Sydney,2,academic_or_public_research,inferred_from_affiliation_strings
+Communauté d'universités et établissements de Toulouse,2,academic_or_public_research,inferred_from_affiliation_strings
+Direction générale de l'armement [France],2,unknown,inferred_from_affiliation_strings
+"Modélisation, Information et Systèmes - UR UPJV 4290",2,industrial_or_private,inferred_from_affiliation_strings
+Université de Picardie Jules Verne,2,academic_or_public_research,inferred_from_affiliation_strings
+Laboratoire d'Innovation Numérique pour les Entreprises et les Apprentissages au service de la Compétitivité des Territoires,1,industrial_or_private,inferred_from_affiliation_strings
+CESI : groupe d’Enseignement Supérieur et de Formation Professionnelle,1,academic_or_public_research,inferred_from_affiliation_strings
+HESAM Université - Communauté d'universités et d'établissements Hautes écoles Sorbonne Arts et métiers université,1,industrial_or_private,inferred_from_affiliation_strings
+Automatika Robotics,1,industrial_or_private,inferred_from_affiliation_strings
+SIGMA Clermont,1,unknown,inferred_from_affiliation_strings
+Université Clermont Auvergne [2017-2020],1,academic_or_public_research,inferred_from_affiliation_strings
+Laboratoire de Recherche en Sciences Végétales,1,academic_or_public_research,inferred_from_affiliation_strings
+Department of Astronomy and Astrophysics [Chicago],1,unknown,inferred_from_affiliation_strings
+Kavli Institute for Astronomy and Astrophysics [Beijing],1,academic_or_public_research,inferred_from_affiliation_strings
+Sydney Institute for Astronomy,1,academic_or_public_research,inferred_from_affiliation_strings
+International Centre for Radio Astronomy Research,1,unknown,inferred_from_affiliation_strings
+National Astronomical Observatories [Beijing],1,unknown,inferred_from_affiliation_strings
+Laboratoire d'Astrophysique de Marseille,1,academic_or_public_research,inferred_from_affiliation_strings
+Laboratoire de Physico-chimie des Polymères et des Interfaces,1,academic_or_public_research,inferred_from_affiliation_strings
+Imperial College London,1,academic_or_public_research,inferred_from_affiliation_strings
+China Agricultural University,1,academic_or_public_research,inferred_from_affiliation_strings
+Université de Toulouse,1,academic_or_public_research,inferred_from_affiliation_strings
+University of Chicago,1,academic_or_public_research,inferred_from_affiliation_strings
+Peking University [Beijing],1,academic_or_public_research,inferred_from_affiliation_strings
+ARC Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D),1,academic_or_public_research,inferred_from_affiliation_strings
+The University of Western Australia,1,academic_or_public_research,inferred_from_affiliation_strings
+Government of Western Australia,1,unknown,inferred_from_affiliation_strings
+"Centre for Astrophysics and Supercomputing, Swinburne University of Technology, John Street, Hawthorn 3122, Australia",1,industrial_or_private,inferred_from_affiliation_strings
+Case Western Reserve University [Cleveland],1,academic_or_public_research,inferred_from_affiliation_strings
+Aix Marseille Université,1,academic_or_public_research,inferred_from_affiliation_strings
+Institut national des sciences de l'Univers,1,academic_or_public_research,inferred_from_affiliation_strings
+Centre National d'Études Spatiales [Toulouse],1,unknown,inferred_from_affiliation_strings
+European Southern Observatory,1,unknown,inferred_from_affiliation_strings
+"Zhejiang University [Hangzhou, China]",1,academic_or_public_research,inferred_from_affiliation_strings
+Université de Cergy Pontoise,1,academic_or_public_research,inferred_from_affiliation_strings
+CY Cergy Paris Université,1,academic_or_public_research,inferred_from_affiliation_strings
+LRSV-Génomique et Biotechnologie des Fruits,1,industrial_or_private,inferred_from_affiliation_strings
+Curtin University,1,academic_or_public_research,inferred_from_affiliation_strings
+Chinese Academy of Sciences [Beijing],1,unknown,inferred_from_affiliation_strings
+Université Paris-Seine,1,academic_or_public_research,inferred_from_affiliation_strings
+Fédération INSTITUT DES MATÉRIAUX DE CERGY-PONTOISE,1,academic_or_public_research,inferred_from_affiliation_strings
+Robots coopératifs et adaptés à la présence humaine en environnements dynamiques,1,unknown,inferred_from_affiliation_strings
+Technocentre Renault [Guyancourt],1,industrial_or_private,inferred_from_affiliation_strings
+RENAULT,1,industrial_or_private,inferred_from_affiliation_strings
+Technologies et systèmes d'information pour les agrosystèmes,1,industrial_or_private,inferred_from_affiliation_strings
+"Innovation, Territoire, Agriculture et Agro-industrie, Connaissance et Technologie",1,industrial_or_private,inferred_from_affiliation_strings
+XLIM,1,unknown,inferred_from_affiliation_strings
+Laboratoire d'analyse et d'architecture des systèmes,1,academic_or_public_research,inferred_from_affiliation_strings
+Institut des Systèmes Intelligents et de Robotique,1,academic_or_public_research,inferred_from_affiliation_strings
+Laboratoire d'Intégration des Systèmes et des Technologies,1,industrial_or_private,inferred_from_affiliation_strings
+"Centre de Recherche en Informatique, Signal et Automatique de Lille - UMR 9189",1,academic_or_public_research,inferred_from_affiliation_strings
+Georgia Tech Lorraine [Metz],1,unknown,inferred_from_affiliation_strings
+"Informatique, BioInformatique, Systèmes Complexes",1,unknown,inferred_from_affiliation_strings
+Centre Inria de l'Université de Rennes,1,academic_or_public_research,inferred_from_affiliation_strings
+Institut de Recherche en Informatique et Systèmes Aléatoires,1,academic_or_public_research,inferred_from_affiliation_strings
+Agrosystèmes tropicaux,1,unknown,inferred_from_affiliation_strings
+"Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement",1,academic_or_public_research,inferred_from_affiliation_strings
+UniLaSalle,1,industrial_or_private,inferred_from_affiliation_strings
+Université de Limoges,1,academic_or_public_research,inferred_from_affiliation_strings
+Université Toulouse Capitole,1,academic_or_public_research,inferred_from_affiliation_strings
+Institut National des Sciences Appliquées - Toulouse,1,academic_or_public_research,inferred_from_affiliation_strings
+Université Toulouse - Jean Jaurès,1,academic_or_public_research,inferred_from_affiliation_strings
+Université Toulouse III - Paul Sabatier,1,industrial_or_private,inferred_from_affiliation_strings
+Commissariat à l'énergie atomique et aux énergies alternatives,1,industrial_or_private,inferred_from_affiliation_strings
+Centrale Lille,1,unknown,inferred_from_affiliation_strings
+Institut national polytechnique Clermont Auvergne,1,academic_or_public_research,inferred_from_affiliation_strings
+Georgia Institute of Technology [Atlanta],1,industrial_or_private,inferred_from_affiliation_strings
+Ecole Supérieure d'Electricité - SUPELEC (FRANCE),1,academic_or_public_research,inferred_from_affiliation_strings
+CentraleSupélec,1,unknown,inferred_from_affiliation_strings
+Arts et Métiers Sciences et Technologies,1,industrial_or_private,inferred_from_affiliation_strings
+Université d'Évry-Val-d'Essonne,1,academic_or_public_research,inferred_from_affiliation_strings
+Université Paris-Saclay,1,industrial_or_private,inferred_from_affiliation_strings
+Université de Rennes,1,academic_or_public_research,inferred_from_affiliation_strings
+Institut National des Sciences Appliquées - Rennes,1,academic_or_public_research,inferred_from_affiliation_strings
+Université de Bretagne Sud,1,academic_or_public_research,inferred_from_affiliation_strings
+École normale supérieure - Rennes,1,academic_or_public_research,inferred_from_affiliation_strings
+"Équipe Robotique, Action et Perception",1,unknown,inferred_from_affiliation_strings
+Sorbonne Université,1,academic_or_public_research,inferred_from_affiliation_strings
+Direction de Recherche Technologique (CEA),1,industrial_or_private,inferred_from_affiliation_strings
+Université de Lille,1,academic_or_public_research,inferred_from_affiliation_strings
+"Modélisation, automatique, commande des systèmes complexes",1,industrial_or_private,inferred_from_affiliation_strings
+"Image, système de perception, robotique",1,unknown,inferred_from_affiliation_strings
+Université Clermont Auvergne,1,academic_or_public_research,inferred_from_affiliation_strings
+Sensor-based and interactive robotics,1,industrial_or_private,inferred_from_affiliation_strings
+"RÉALITÉ VIRTUELLE, HUMAINS VIRTUELS, INTERACTIONS ET ROBOTIQUE",1,unknown,inferred_from_affiliation_strings
+Laboratoire Jean Kuntzmann,1,academic_or_public_research,inferred_from_affiliation_strings
+Modèles statistiques bayésiens et des valeurs extrêmes pour données structurées et de grande dimension,1,academic_or_public_research,inferred_from_affiliation_strings
+Australian Centre for Field Robotics,1,industrial_or_private,inferred_from_affiliation_strings
+Delft University of Technology,1,industrial_or_private,inferred_from_affiliation_strings
+NXP Semiconductors [France],1,unknown,inferred_from_affiliation_strings
+Korea Advanced Institute of Science and Technology,1,industrial_or_private,inferred_from_affiliation_strings
+Laboratoire Jean Alexandre Dieudonné,1,academic_or_public_research,inferred_from_affiliation_strings
+"AlgebRe, geOmetrie, Modelisation et AlgoriTHmes",1,industrial_or_private,inferred_from_affiliation_strings
+National and Kapodistrian University of Athens,1,academic_or_public_research,inferred_from_affiliation_strings
+"Department of LPM, SKRAU, Bikaner, India.",1,unknown,inferred_from_affiliation_strings
+"Department of LPM, SAS, Nagaland University, Medziphema, India.",1,industrial_or_private,inferred_from_affiliation_strings
+"Department of Agricultural Extension, SAS, Nagaland University, Medziphema, India.",1,industrial_or_private,inferred_from_affiliation_strings

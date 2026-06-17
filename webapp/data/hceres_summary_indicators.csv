@@ -1,0 +1,12 @@
+indicator,value,status
+raw_hal_records,69.0,verified_hal_metadata
+records_removed_by_filtering,11.0,computed
+records_after_filtering,58.0,computed
+duplicates_removed,0.0,computed
+unique_publications,58.0,computed
+identified_or_inferred_members,31.0,manual_or_inferred
+producing_members,31.0,partial_if_member_list_inferred
+producing_member_rate,1.0,partial_if_member_list_inferred
+average_publications_per_member,1.8709677419354838,partial_if_member_list_inferred
+median_publications_per_author,1.0,computed
+multi_author_publications,56.0,computed

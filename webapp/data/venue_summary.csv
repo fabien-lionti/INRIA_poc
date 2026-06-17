@@ -1,0 +1,5 @@
+indicator,value,status
+distinct_venues,49,computed
+publications_without_clear_venue,0,computed
+journal_publications,13,computed
+conference_or_proceedings_publications,45,computed
